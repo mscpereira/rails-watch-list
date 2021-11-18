@@ -1,0 +1,17 @@
+<h2><%= @list.name %></h2>
+
+<div class="container">
+  <% @bookmarks.each do |b| %>
+    <div class="card">
+      <%= image_tag b.movie.poster_url, width: 200 %>
+      <p><%= b.movie.title %></p>
+      <p><%= b.movie.overview %></p>
+      <p><%= b.movie.rating %></p>
+      <p><%= b.comment%></p>
+  <%= link_to 'delete', bookmark_path(b), method: :delete%>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'create a bookmark', new_list_bookmark_path(@list) %>
+<%= link_to 'back', lists_path %>
