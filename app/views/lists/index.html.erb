@@ -43,7 +43,7 @@
        <% if !list.photo.key.nil? %>
           <%= cl_image_tag(list.photo.key, class: "card-img-top") %>
         <% else %>
-          <%= cl_image_tag("res-console.cloudinary_jkeku5", class: "card-img-top") %>
+          <%= cl_image_tag("moviepic_f7inen", class: "card-img-top") %>
         <% end %>
           <div class="card-body">
             <h5 class="card-title text-center"><em>"<%= link_to list.name, list_path(list) %>"</em></h5>
