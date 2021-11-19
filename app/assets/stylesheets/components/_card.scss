@@ -1,5 +1,7 @@
 .container {
   width: 100%;
+  margin-bottom: 50px;
+  min-width: 200px
 }
 
 .col-sm {
@@ -11,6 +13,9 @@
 }
 
 .card {
+  border: 1.5px solid lightgray;
+  box-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+  margin: 20px;
   transition: transform .6s ease-out;
   text-align: center;
   .plus {
@@ -19,14 +24,21 @@
   }
 }
 .card:hover {
-  transform: translate(-5px, -2px);
   transition: 0.3s;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
 }
 
 .card-plus {
-  background-color: #f7f5f4;
+  margin-right: 70px;
+  text-align: center;
+  background-color: #f7f7f7;
   border: none;
+  box-shadow: 0 0 0;
 }
 
 .card-body-plus {
@@ -36,9 +48,10 @@
 }
 
 .card-plus:hover {
-  transform: translate(0px, 0px);
+  transform: translate(-5px, -2px);
   transition: 0s;
   box-shadow: 0px 0px 0px;
+  transition: 0.3s;
 }
 
 
@@ -55,7 +68,6 @@
   }
   a:hover {
     text-decoration: none;
-    font-size: 22px;
     transition: 0.3s;
   }
 }
@@ -75,8 +87,18 @@
 
 .card-title {
   background-color: rgba(187, 187, 187, 0.342);
-  box-shadow: 1px 5px 4px rgb(158, 158, 158);
+  box-shadow: 1px 1px 2px rgb(158, 158, 158);
+  margin: 20px;
+  transition: transform .6s ease-out;
+  text-align: center;
 }
+
+.card-title:hover {
+  transform: translate(-5px, -2px);
+  transition: 0.3s;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+}
+
 
 /* show */
 .container-movie {
@@ -85,6 +107,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 .card-movie {
   background: white;
@@ -142,6 +165,8 @@
 }
 
 .card-img-top {
-    box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
     z-index: 1;
+    height: 200px;
+    object-fit: cover;
 }

@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 before_action :set_list, only: %i[show edit update destroy ]
   def index
     @lists = List.all
+    @list = List.new
   end
 
   def show
@@ -41,6 +42,6 @@ before_action :set_list, only: %i[show edit update destroy ]
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

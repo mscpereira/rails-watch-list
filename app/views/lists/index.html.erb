@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to 'Home', lists_path(@list) %>
+            <%= link_to 'Home', root_path %>
           </li>
           <li class="nav-item-avatar dropdown">
           <%= image_tag 'avatar.jpg', class: "avatar"%>
@@ -40,7 +40,11 @@
     <div class="col-sm">
       <% @lists.each do |list| %>
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1617440168937-c6497eaa8db5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
+       <% if !list.photo.key.nil? %>
+          <%= cl_image_tag(list.photo.key, class: "card-img-top") %>
+        <% else %>
+          <%= cl_image_tag("res-console.cloudinary_jkeku5", class: "card-img-top") %>
+        <% end %>
           <div class="card-body">
             <h5 class="card-title text-center"><em>"<%= link_to list.name, list_path(list) %>"</em></h5>
             <div class="card-links">
