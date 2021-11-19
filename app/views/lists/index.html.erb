@@ -1,7 +1,66 @@
-<h1>All lists</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <a class="navbar-brand" href="#">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Home', lists_path(@list) %>
+          </li>
+          <li class="nav-item-avatar dropdown">
+          <%= image_tag 'avatar', class: "avatar"%>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<%= link_to 'create list', new_list_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1615414047026-802692414b79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2069&q=80);">
+
+  <div class="container">
+    <h1> co||ect<strong>0</strong>vies</h1>
+    <p>Collect all your movies with 1 click!</p>
+    <p><span id="banner-typed-text"></span></p>
+  </div>
+</div>
+
+<div class="container-title">
+  <h1>My <span id="my-list">lists</span></h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <% @lists.each do |list| %>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1617440168937-c6497eaa8db5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title text-center"><em>"<%= link_to list.name, list_path(list) %>"</em></h5>
+            <div class="card-links">
+              <%= link_to list_path(list), method: :delete, data: { confirm: 'Are you sure you wanto to delete?' } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="card card-plus" style="width: 18rem;">
+        <div class="card-body-plus">
+        <h1 class="kreep">
+          <button class="button button5"><b><%= link_to new_list_path do %>
+            <i class="plus fas fa-plus-square"></i>
+          <% end %></b></button>
+        </h1>
+  </div>
+</div>
+    </div>
+      </div>
+    </div>

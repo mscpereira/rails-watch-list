@@ -1,0 +1,82 @@
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #9c9c9c;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+  border-radius:20%;
+}
+
+.button:hover {
+    background-color: #555555;
+    color: white;
+}
+.button:hover {
+    background-color: #555555;
+    color: white;
+}
+
+
+/*Bounce*/
+@keyframes kreep {
+    0% {-webkit-transform: scale(1.1,.9);
+        transform: scale(1.1,.9);}
+   50% { -webkit-transform: scale(.9,1.1) translateY(-.5rem)}
+   70% { -webkit-transform: scale(1);
+         transform: scale(1);}
+}
+
+h1.kreep {
+  display: inline-block;
+  /*name-duration-function(ease,eas-in,linear)-delay-count-direction */
+  animation: kreep 0.7s ease 2s infinite alternate;
+}
+
+h1.kreep:hover {
+  animation: none;
+}
+
+/*SHOW*/
+
+
+.btn-success:not(:disabled):not(:disabled):active {
+   background-color: $antracite;
+   border: #838383;
+   box-shadow: none;
+}
+
+.btn-success {
+  align-self: center;
+  justify-self: center;
+  width: 130px;
+  background-color: #c9c9ca;
+  border: #838383;
+  box-shadow: 2px 2px 2px rgb(49, 49, 49);
+}
+
+.btn-success:hover {
+background-color: $antracite;
+color: #c9c9ca;
+box-shadow: 3px 3px 2px  #4e4e4e56;
+cursor: pointer;
+border: #838383;
+}
+
+
+.btn-success:active .btn-success:focus .btn-success:visited {
+  box-shadow: 6px 6px 10px  #29292956;
+  cursor: pointer;
+  text-shadow: -1px -1px 0px #777, -1px -1px 0px #777;
+  box-shadow: inset 3.5px 8px 10px #222;
+  transform: translateY(1px);
+  border: #838383;
+  background-color: $antracite;
+}

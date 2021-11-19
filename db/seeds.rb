@@ -1,15 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-100.times do
-  Movie.create(
-    title: Faker::Movie.title,
-    overview: Faker::Lorem.paragraph(sentence_count: 4),
-    poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg",
-    rating: rand(1.0..10.0)
-  )
-end
+
+    url = "http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>"
+    poster_prefix = "https://image.tmdb.org/t/p/w500"
+    data = URI.open(url).read
+    result = JSON.parse(data)
+
+    result["results"].each do |res|
+    poster_path = res["poster_path"]
+      Movie.create!(
+        title: res["title"],
+        overview: res["overview"],
+        poster_url: "#{poster_prefix}#{poster_path}",
+        rating: res["vote_average"].to_f)
+    end
